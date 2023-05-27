@@ -1,0 +1,19 @@
+.gameboard{
+  border: none;
+  margin: 100px;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.element{
+  width: 50px;
+  height: 50px;
+  border: solid;
+  box-sizing: border-box;
+}
+.bgimg{
+  width: 45px;
+  height: 45px;
+}
