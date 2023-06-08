@@ -1,6 +1,6 @@
 # Field Materials - Frontend Coding Assignment
 
-*confidential, please do not share*
+_confidential, please do not share More_
 
 Design and implement a (partial) Battleship game as a web app.
 
@@ -15,6 +15,7 @@ You need to use React and Typescript for the implementation. You may feel free t
 Please create a new branch from main and open pull request to main upon completion. You may push as many commits to your branch as you need (no need to squash them before opening pull request).
 
 Ship layout data:
+
 ```
 {
 
@@ -35,6 +36,5 @@ Ship layout data:
     ]
 }
 ```
-
 
 <img width="452" alt="image" src="https://user-images.githubusercontent.com/103999766/165146192-e71c1d15-1682-41a4-bf14-3c39bd8c1d8e.png">
