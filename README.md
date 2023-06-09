@@ -2,7 +2,7 @@
 
 _confidential, please do not share More_
 
-Design and implement a (partial) Battleship game as a web app.
+Design and implement a (partial) Battleship game as a web app.adsf
 
 In Battleship, the computer has positioned five ships of various sizes on a 10x10 board. Each ship must be placed horizontally or vertically, completely on the board, without overlapping another ship. The player cannot see the ship's locations. Each round, the player "fires" at a board position of his choosing. The computer indicates if this was a "hit" or a "miss". When all tiles of a particular ship have been hit, the computer indicates that the entire ship has been sunk. When the player has sunk all of the ships, the game is over.
 
