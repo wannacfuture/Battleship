@@ -1,0 +1,13 @@
+name: PR Reviewer Changed
+
+on:
+  pull_request:
+    types:
+      - review_requested
+
+jobs:
+  add_to_project:
+    runs-on: windows-latest
+
+    steps:
+      - run: echo github.event.requested_team.name
