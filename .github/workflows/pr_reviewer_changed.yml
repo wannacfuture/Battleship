@@ -10,4 +10,4 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - run: echo github.event.requested_team.name
+      - run: echo ${github.event.requested_team.name}
