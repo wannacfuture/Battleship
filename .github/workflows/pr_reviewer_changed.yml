@@ -10,4 +10,51 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - run: echo "${{ github.event.pull_request.requested_team_name }}"
+      - name: Get project data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: wannacfuture
+          PROJECT_NUMBER: 3
+        run: |
+          gh api graphql -f query='
+            query($username: String!, $number: Int!) {
+              user(login: $username) {
+                project(number: $number) {
+                  id
+                  fields(first:20) {
+                    nodes {
+                      ... on ProjectField {
+                        id
+                        name
+                      }
+                      ... on ProjectSingleSelectField {
+                        id
+                        name
+                        options {
+                          id
+                          name
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }' -f username=$USERNAME -F number=$PROJECT_NUMBER > project_data.json
+
+          echo 'PROJECT_ID='$(jq '.data.user.project.id' project_data.json) >> $GITHUB_ENV
+      - name: Add PR to project
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_ID: ${{ github.event.pull_request.node_id }}
+
+        run: |
+          item_id="$( gh api graphql -f query='
+            mutation($project:ID!, $pr:ID!) {
+              addProjectV2ItemById(input: {projectId: $project, contentId: $pr}) {
+                item {
+                  id
+                }
+              }
+            }' -f project=$PROJECT_ID -f pr=$PR_ID --jq '.data.addProjectV2ItemById.item.id')"
+            
+            echo 'ITEM_ID='$item_id >> $GITHUB_ENV
