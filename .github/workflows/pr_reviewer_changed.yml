@@ -17,31 +17,22 @@ jobs:
           PROJECT_NUMBER: 3
         run: |
           gh api graphql -f query='
-            query($username: String!, $number: Int!) {
-              user(login: $username) {
-                project(number: $number) {
+            query($org: String!, $number: Int!) {
+              user(login: $username){
+                projectNext(number: $number) {
                   id
                   fields(first:20) {
                     nodes {
-                      ... on ProjectField {
-                        id
-                        name
-                      }
-                      ... on ProjectSingleSelectField {
-                        id
-                        name
-                        options {
-                          id
-                          name
-                        }
-                      }
+                      id
+                      name
+                      settings
                     }
                   }
                 }
               }
             }' -f username=$USERNAME -F number=$PROJECT_NUMBER > project_data.json
 
-          echo 'PROJECT_ID='$(jq '.data.user.project.id' project_data.json) >> $GITHUB_ENV
+          echo 'PROJECT_ID='$(jq '.data.organization.projectNext.id' project_data.json) >> $GITHUB_ENV
       - name: Add PR to project
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
