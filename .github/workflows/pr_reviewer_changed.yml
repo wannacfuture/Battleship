@@ -5,7 +5,8 @@ on:
     types:
       - review_requested
 env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.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 }}
+  MY_GITHUB_TOKEN: ${{ secrets.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 }}
 
 jobs:
   add_to_project:
