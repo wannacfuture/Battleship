@@ -9,7 +9,7 @@ env:
 
 jobs:
   add_to_project:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Assign Pull Request to Project
