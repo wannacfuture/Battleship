@@ -10,4 +10,5 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - run: echo ${{ github.event.pull_request.requested_reviewers }}
+      - name: Check Reviewer
+        run: echo ${{ github.event.pull_request.requested_reviewers[-1].login }}
