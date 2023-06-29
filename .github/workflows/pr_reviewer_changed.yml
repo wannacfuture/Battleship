@@ -16,3 +16,13 @@ jobs:
         with:
           project-url: https://github.com/users/wannacfuture/projects/3
           github-token: ${{ secrets.PAT_TOKEN }}
+      - name: Copy Issue
+        if: contains(github.event.pull_request.requested_reviewers.*.login, 'wannacfuture')
+        uses: dacbd/create-issue-action@v1
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          org: wannacfuture
+          repo: trivia
+          title: QA for ${{ github.event.pull_request.title }}
+          body: |
+            Testing pr <a href="${{ github.event.pull_request.html_url }}">${{ github.event.pull_request.number }}</a>
