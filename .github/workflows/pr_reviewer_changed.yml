@@ -8,7 +8,7 @@ on:
   issue_comment:
     types: [created]
 env:
-  MY_GITHUB_TOKEN: ${{ secrets.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 }}
+  MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
 
 jobs:
   assign_one_project:
