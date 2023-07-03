@@ -15,7 +15,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: echo
-        run: echo ${{github.event.pull_request.requested_reviewers[0].login}}
+        run: echo ${{secrets.PAT_TOKEN}}
       - name: add pr to project
         if: github.event.pull_request.requested_reviewers[0].login == 'wannacfuture' && github.event.pull_request.base.ref == 'main'
         uses: actions/add-to-project@v0.5.0
