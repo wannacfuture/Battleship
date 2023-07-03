@@ -12,6 +12,8 @@ jobs:
     name: Add issue to project
     runs-on: ubuntu-latest
     steps:
+      - name: echo
+        run: echo ${{github.event.pull_request.requested_reviewers[-1].login}}
       - name: add pr to project
         if: github.event.pull_request.requested_reviewers[-1].login == 'wannacfuture' && github.event.pull_request.base.ref == 'main'
         uses: actions/add-to-project@v0.5.0
