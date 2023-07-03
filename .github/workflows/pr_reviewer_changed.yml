@@ -12,6 +12,8 @@ jobs:
     name: Add issue to project
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
       - name: echo
         run: echo ${{github.event.pull_request.requested_reviewers[0].login}}
       - name: add pr to project
