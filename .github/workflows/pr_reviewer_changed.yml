@@ -15,8 +15,6 @@ jobs:
       contents: read
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
       - name: echo
         run: echo ${{secrets.PAT_TOKEN}}
       - name: add pr to project
