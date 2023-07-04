@@ -14,11 +14,6 @@ jobs:
     permissions:
       contents: read
 
-    strategy:
-      matrix:
-        ref: ${{ github.event.pull_request.head.ref }}
-        forked: ${{ github.event.pull_request.head.repo.full_name }}
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
