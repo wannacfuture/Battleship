@@ -35,7 +35,7 @@ jobs:
         uses: dacbd/create-issue-action@v1
         with:
           token: ${{ secrets.PAT_TOKEN }}
-          org: wannacfuture
+          owner: wannacfuture
           repo: trivia
           title: QA for ${{ github.event.pull_request.title }}
           body: |
