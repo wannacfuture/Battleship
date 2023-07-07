@@ -14,7 +14,7 @@ You need to use React and Typescript for the implementation. You may feel free t
 
 Please create a new branch from main and open pull request to main upon completion. You may push as many commits to your branch as you need (no need to squash them before opening pull request).
 
-Ship layout data:
+Ship layout data:.
 ```
 {
 
