@@ -1,6 +1,6 @@
 # Field Materials - Frontend Coding Assignment
 
-_confidential, please do not share More_
+_confidential, please do not share More_.
 
 Design and implement a (partial) Battleship game as a web app.
 
