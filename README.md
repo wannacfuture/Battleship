@@ -1,4 +1,4 @@
-# Field Materials - Frontend Coding Assignment
+# Field Materials - Frontend Coding Assignment.
 
 *confidential, please do not share*
 
